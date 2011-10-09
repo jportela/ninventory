@@ -1,0 +1,29 @@
+<% form_for(@item) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :category %><br />
+	<%= f.select :category, CATEGORIES %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.select :status, STATUS_CODES %>
+  </p>
+  <p>
+    <%= f.label :holder %><br />
+    <%= f.text_field :holder %>
+  </p>
+  <p>
+    <%= f.submit 'Enviar' %>
+  </p>
+<% end %>
+
+<%= link_to 'Voltar', items_path %>

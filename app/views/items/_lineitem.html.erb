@@ -1,0 +1,15 @@
+<% if !item.nil? %>
+<table class="itemstable">
+	<tr>
+		<td class="name_col"><%=h item.name %></td>
+		<td class="desc_col"><%=h item.description %></td>
+		<td class="cat_col"><%=h item.category %></td>
+		<td class="st_col">
+		<% if item.status != "Requisitado" %><%=h item.status %>
+		<% else %>Requisitado por <%=h item.holder %><% end %>
+		</td>
+		<td class="edit_col"><%= link_to_remote image_tag("edit_icon.png"), :url => "items/edit/" + item.id.to_s %></td>
+		<td class="del_col"><%= link_to_remote image_tag("delete_icon.png"), :url => item, :method => :delete, :confirm => 'Tem a certeza que deseja apagar este item?' %></td>
+	</tr>
+</table>
+<% end %>

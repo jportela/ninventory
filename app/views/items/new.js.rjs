@@ -1,0 +1,2 @@
+page.replace_html "notice", :partial => "notice"
+page.replace_html "newitem", :partial => "newitem", :locals => {:item => @item}

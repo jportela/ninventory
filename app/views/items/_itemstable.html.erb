@@ -1,0 +1,17 @@
+<div id="headertable">
+	<table class="itemstable" rules="rows">
+		<tr>
+			<th class="name_col">Nome</th>
+			<th class="desc_col">Descrição</th>
+			<th class="cat_col">Categoria</th>
+			<th class="st_col">Estado</th>
+			<th class="edit_col"></th>
+			<th class="del_col"></th>
+		</tr>
+	</table>
+</div>
+<% @items.each do |item| %>
+	<div id="item<%= item.id %>">
+		<%= render :partial => "lineitem", :locals => {:item => item} %>
+	</div>
+<% end %>

@@ -1,0 +1,2 @@
+page.replace_html "notice", :partial => "notice"
+page.replace "item" + @item.id.to_s, ""

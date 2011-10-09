@@ -1,0 +1,7 @@
+page.replace_html "notice", :partial => "notice"
+if @item.nil?
+  page.replace_html "newitem", :partial => "newitem", :locals => {:item => nil}
+else
+  page.replace_html "item" + @item.id.to_s, :partial => "lineitem", :locals => {:item => @item}
+end
+# page.insert_html :bottom, "maintable", :partial => "lineitem", :locals => {:item => @item}

@@ -1,0 +1,8 @@
+<h1><%= image_tag "ni_logo.png", :style => "width: 75px; height: auto;" %>nventário</h1>
+
+<div id="maintable">
+	<%= render :partial => "itemstable" %>
+</div>
+<div id="newitem">
+	<%= render :partial => "newitem", :locals => {:item => nil} %>
+</div>

@@ -1,0 +1,29 @@
+<p>
+  <b>Name:</b>
+  <%=h @item.name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @item.category %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @item.description %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @item.status %>
+</p>
+
+<p>
+  <b>Holder:</b>
+  <%=h @item.holder %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Delete', item, :confirm => 'Are you sure?', :method => :delete %> |
+<%= link_to 'Back', items_path %>
