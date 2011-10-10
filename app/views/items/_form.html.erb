@@ -1,5 +1,4 @@
-<% form_for(@item) do |f| %>
-  <%= f.error_messages %>
+<%= form_for @item do |f| %>
 
   <p>
     <%= f.label :name %><br />
@@ -7,7 +6,7 @@
   </p>
   <p>
     <%= f.label :category %><br />
-	<%= f.select :category, CATEGORIES %>
+	<%= f.select :category, Item::CATEGORIES %>
   </p>
   <p>
     <%= f.label :description %><br />
@@ -15,7 +14,7 @@
   </p>
   <p>
     <%= f.label :status %><br />
-    <%= f.select :status, STATUS_CODES %>
+    <%= f.select :status, Item::STATUS_CODES %>
   </p>
   <p>
     <%= f.label :holder %><br />
