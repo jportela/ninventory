@@ -1,5 +1,5 @@
 <% if !item.nil? %>
-	<% remote_form_for(item) do |f| %>
+	<% form_for(item, :remote => true) do |f| %>
 		<table class="itemstable">
 		    <td class="name_col"><%= f.text_field :name %></td>
 		    <td class="desc_col"><%= f.text_field :description %></td>
@@ -7,7 +7,7 @@
 			<td class="st_col"><%= f.select :status, STATUS_CODES, {}, {:onchange => "toggle_holder()"} %>
 			<span id="holder_toggle" style="display: <%= (item.status == "Requisitado" ? "inline" : "none") %>"> por <%= f.text_field :holder, :style => "width: 75%" %></span></td>
 		    <td class="edit_col"><%= image_submit_tag "accept_icon.png", :style => "width: 23px; height: 20px" %></td>
-		    <td class="del_col"><%= link_to_remote image_tag("back_icon.png"), :url => {:action => :cancel, :id => item.id} %></td>
+		    <td class="del_col"><%= link_to image_tag("back_icon.png"), :url => {:action => :cancel, :id => item.id}, :remote => true %></td>
 		</table>
 	<% end %>
 <% else %>
@@ -17,7 +17,7 @@
 		<td class="desc_col"></td>
 		<td class="cat_col"></td>
 		<td class="st_col"></td>
-		<td class="edit_col"><%= link_to_remote image_tag("add_icon.png"), :url => new_item_path %></td>
+		<td class="edit_col"><%= link_to image_tag("add_icon.png"), :url => new_item_path, :remote => true %></td>
 		<td class="del_col"></td>
 	</tr>
 </table>
